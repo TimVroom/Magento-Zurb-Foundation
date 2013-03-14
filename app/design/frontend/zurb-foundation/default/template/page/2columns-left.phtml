@@ -1,0 +1,38 @@
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang() ?>" class="no-js"> <!--<![endif]-->
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body id="page" <?php echo $this->getBodyClass()?' class="off-canvas hide-extras'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+    <?php echo $this->getChildHtml('global_notices') ?>
+        <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+                <?php echo $this->getChildHtml('breadcrumbs') ?>
+                <div class="row">
+                    <section role="main">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                        <?php echo $this->getChildHtml('content') ?>
+                    </section>
+                    <section id="sidebar" role="complementary">
+                        <?php echo $this->getChildHtml('left') ?>
+                    </section>
+
+                </div>
+        <?php echo $this->getChildHtml('footer') ?>
+    <?php echo $this->getChildHtml('before_body_end') ?>
+<?php echo $this->getAbsoluteFooter() ?>
+        </div>
+</body>
+</html>

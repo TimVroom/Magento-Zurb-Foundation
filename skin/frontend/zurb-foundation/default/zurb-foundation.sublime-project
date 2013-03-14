@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/xampp/htdocs/goldyfit"
+		}
+	],
+	"settings":
+	{
+		"default_line_ending": "LF",
+		"tab_size": 4,
+		"translate_tabs_to_spaces": false,
+		"trim_trailing_white_space_on_save": true
+	}
+}

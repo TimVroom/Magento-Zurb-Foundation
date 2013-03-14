@@ -2,6 +2,7 @@
 /app/design/adminhtml/
 /app/design/frontend/base/
 /app/design/frontend/default/
+/app/design/frontend/zurb-foundation/goldyfit
 /app/design/install/
 /app/etc/
 /app/.htaccess
@@ -33,7 +34,8 @@
 /skin/adminhtml/
 /skin/frontend/base/
 /skin/frontend/default/
-/skin/frontend/waterlee-boilerplate/default/.sass-cache/*
+/skin/frontend/zurb-foundation/default/.sass-cache/*
+/skin/frontend/zurb-foundation/goldyfit
 /skin/install/
 /var/
 /.htaccess
