@@ -5,7 +5,7 @@
 @import "iconfontsettings";
 @import "foundation";
 
-body{ background: url(../images/bkg/pagebg.png) repeat white; font-family: 'Open Sans', sans-serif; }
+body{ background-color: white; font-family: 'Open Sans', sans-serif; }
 
 /* font-face */
 @include face;
@@ -103,8 +103,8 @@ h2 {
 	font-size: 2.2rem;
 	margin-bottom: 9px;
 }
-strong, b{font-weight: 600}
-form label{margin-bottom: 0}
+strong, b {font-weight: 600}
+form label {margin-bottom: 0}
 
 // ----------------------------------------
 // Header
@@ -348,6 +348,7 @@ form.custom div.custom.dropdown{display: inline-block;}
 
 // --- Grid View Isotope Filtering
 
+.narrowbutton {top: 40px; z-index: 50;}
 .category-products { }
 .category-products.row {width: 100%;}
 
@@ -691,8 +692,8 @@ footer { background: #555; color: #fff; padding: 10px 0; }
 
 [role="navigation"]#topMenu ul { margin-top: 0; }
 
-.js [role="complementary"] { margin-left: -100%; width: 80%; float: left; z-index: 2; }
-.js [role="main"] { margin-left: 0;  @include border-radius(3px); float: right; z-index: 1; position: relative; }
+.js [role="complementary"] { margin-left: -100%; width: 80%; float: left; z-index: 1; }
+.js [role="main"] { margin-left: 0;  @include border-radius(3px); float: right; z-index: 2; position: relative; }
 .js .paneled [role="main"] { width: 500%; overflow: hidden; float: none; position: relative; left: 0; @include transition(0.15s all ease-in); }
 .js .page-panel { min-height: 400px; float: left; margin: 0; width: 20%; }
 
