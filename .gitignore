@@ -1,4 +1,5 @@
-/app/code/
+/app/code/community
+/app/code/core
 /app/design/adminhtml/
 /app/design/frontend/base/
 /app/design/frontend/default/
