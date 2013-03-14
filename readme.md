@@ -15,6 +15,8 @@ Remember that this is an ALPHA-boilerplate, not a production ready theme! The th
 - Fully integrated Magento Categories Menu, Search and Top Links with Foundation's Top Bar. (http://foundation.zurb.com/docs/components/top-bar.html)
 - Off Canvas Left-Sidebar Menu on Mobile (http://www.zurb.com/playground/off-canvas-layouts)
 - SCSS implemented (http://compass-style.org/)
+- Full Screen Layout. (It's the future, embrace it, and use the full realestate of the devices consumers use. Amazon has moved on, why haven't you? To turn it off, look at the bottom of _settings.scss. Will probably break layout, which you'll have to fix.)
+- jQuery Isotoope. So that as the screen shrinks, the product grid columns take up the whole screen. (http://isotope.metafizzy.co/)
 - Templates files ridden of divitis
 - Local XML for layout overrides
 - Implemented classes that adhere to foundation docs
@@ -29,12 +31,6 @@ Remember that this is an ALPHA-boilerplate, not a production ready theme! The th
 - Make sidebar sticky somehow. Any suggestions?
 - Add iScroll-4 to Sidebar. (http://cubiq.org/iscroll-4)
 - Further remove clunky Magento CSS and optimize it for SCSS.
-
-##Done!
-- Improving this readme with references and more info
-- Upgrade to Foundation 4 from 3.
-- Implement proper "jquery.isotope" support so that as the screen shrinks, the columns take up the whole screen. (http://isotope.metafizzy.co/)
-- Full Screen Layout. (It's the future, embrace it, and use the full realestate of the devices consumers use. Amazon has moved on, why haven't you?)
 
 Currently, a demo is unavailable but at this point it's not about the looks, There is a demo under Waterlee-Boilerplate however. That would give you some idea of where this is going, however, I'm stipping all of the theming components that are in Waterlee, as it's not a pure Foundation 4 theme, which this intends to be. download it, test it and please do provide a constructive feedback. Receiving your feedback and participation will make this worthwhile for everyone.
 
