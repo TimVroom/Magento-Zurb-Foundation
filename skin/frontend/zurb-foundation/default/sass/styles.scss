@@ -4,8 +4,17 @@
 @import "settings";
 @import "iconfontsettings";
 @import "foundation";
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700,400italic);
 
-body{ background-color: white; font-family: 'Open Sans', sans-serif; }
+// Font Variables
+$fontName: 'Source Sans Pro', Arial, sans-serif;
+$skinny: 200;
+$normal: 400;
+$bold: 700;
+
+/* Default header styles */
+h1, h2, h3, h4, h5, h6 { font-family: $body-font-family; font-weight: 700; font-style: normal; color: #222222; text-rendering: optimizeLegibility; line-height: 1.4; margin-top: 0.2em; margin-bottom: 0.5em; }
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; }
 
 /* font-face */
 @include face;
@@ -23,7 +32,7 @@ body{ background-color: white; font-family: 'Open Sans', sans-serif; }
 }
 [class*="#{$classPrefix}"]:before {
 	font-family: $fontName;
-	font-weight: normal;
+	font-weight: $normal;
 	font-style: normal;
 	text-decoration: inherit;
 }
@@ -84,7 +93,7 @@ ul.messages li, ul.messages {
 	@include box-shadow(0 0 6px inherit);
 	margin-bottom: 0;}
 .success-msg{}
-ul.messages li{ display: block; padding:0; font-weight: bold; font-size: 13px; @include border-radius (3px); @include text-shadow (0 1px rgba(255,255,255,0.9)); position: relative; }
+ul.messages li{ display: block; padding:0; font-weight: $bold; font-size: .8em; @include border-radius (3px); @include text-shadow (0 1px rgba(255,255,255,0.9)); position: relative; }
 ul.messages li li {border-radius: 0;padding: 10px 12px}
 ul.messages .success-msg li{ background-color: #7fae00; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
 ul.messages .notice-msg li{ background-color: #C76711; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
@@ -95,15 +104,14 @@ a:hover {color: #17638B; text-decoration: none;}
 
 h1, h2, h3, h4, h5, h6 {
 	color: #444;
-	font-weight: normal;
+	font-weight: $bold;
 	line-height: 1.25;
 }
 h2 {
-	font-size: 22px;
-	font-size: 2.2rem;
+	font-size: 1.4em;
 	margin-bottom: 9px;
 }
-strong, b {font-weight: 600}
+strong, b {font-weight: $bold}
 form label {margin-bottom: 0}
 
 // ----------------------------------------
@@ -141,7 +149,7 @@ header .links li.last { margin-right: 0;}
 
 nav.top-bar a:hover { text-decoration: none; }
 nav.top-bar i {
-	font-size: 22px;
+	font-size: 1.4em;
 	line-height: 24px;
 	vertical-align: text-top;
 }
@@ -204,23 +212,25 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 
 
 #inner-wrapper          { margin-top: 16px; }
-.page-title h1          {font-size: 24px;color: #444;font-weight: normal;margin: 0;padding: 0; margin: 24px 0;}
+.page-title h1          {font-size: 1.4em; color: #444; font-weight: $skinny; margin: 0;padding: 0; margin: 24px 0;}
 
 // ---------------------------------------
 //   Product Page
 // ---------------------------------------
 .product-essential {
-	.product-shop{
+	.product-image {
+		img {margin: 0 auto;}
+	}
+	.product-shop {
 		.product-name h1 {
-			font-size: 32px;
-			font-weight: 300;
+			font-weight: $skinny;
 			margin-top: 0;
-			line-height: 28px;
+			line-height: 1.2em;
 			margin-bottom: 0;
 		}
 		.availability {
-			margin: 6px 0;font-weight: 600;
-			span {font-weight: 300;}
+			margin: 6px 0; font-weight: $bold;
+			span {font-weight: $normal;}
 		}
 		p.email-friend, p.no-rating {margin-bottom: 0px;}
 		.add-to-cart, .add-to-links, .product-options-bottom .add-to-cart, .product-options-bottom .add-to-links {width: 100%; clear: both; margin-bottom: 12px; overflow: hidden;}
@@ -240,31 +250,31 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 			}
 			label, .product-options-bottom label {
 				margin-top: 15px; margin-right: 4px;float: left;
-				font-weight: 600;
+				font-weight: $bold;
 			}
 			input#qty, .product-options-bottom input#qty {width: 32px;margin-top: 6px; margin-right: 4px;float: left; }
 			button.button {
 				margin-top: 6px;
 				margin-left: 6px;
 				padding: 8px 40px 8px;
-				font-weight: 600;
+				font-weight: $bold;
 			}
 		}
 	}
 	.product-img-box{}
 	.price-box{
 		float: none;
-		font-size: 18px;
+		font-size: 1.6em;
 		margin: 10px 0 16px 0;
-		font-weight: 700;
+		font-weight: $bold;
 	}
 	hr {visibility: hidden;}
 	.or {display: none;}
 }
 
-.product-view h2, .box-collateral h3 {font-size: 14px}
+.product-view h2, .box-collateral h3 {font-size: 0.9em}
 
-.short-description{font-size: 14px; line-height: 1.4;}
+.short-description{font-size: 0.8em; line-height: 1.4;}
 .short-description br{
 	display: none;
 }
@@ -306,7 +316,7 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 .toolbar, .toolbar-bottom   	{clear:both;}
 .sorter												{padding-bottom: 6px;}
 .sorter form, .pager form{margin: 0}
-.page-title.category-title h1	{font-size: 1.8em;font-weight: 600;margin: 0;  }
+.page-title.category-title h1	{font-size: 1.8em;font-weight: $bold;margin: 0;  }
 
 .price-box                  {}
 .price-box p                {margin-bottom: 2px}
@@ -316,7 +326,7 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 .add-to-links               {margin:12px 0;}
 .add-to-links li            {margin: 0 4px 0 0; float: left;}
 
-.ratings {font-size: 11px;line-height: 1.25;margin: 7px 0;}
+.ratings {font-size: 0.8em;line-height: 1.25;margin: 7px 0;}
 .rating-box {
 	width: 69px;
 	height: 13px;
@@ -373,13 +383,20 @@ form.custom div.custom.dropdown{display: inline-block;}
 	width: 192px;
 	@include box-shadow(0 1px 3px rgba(34,25,25,0.4));
 
+	.product-image > img {
+		background: none repeat scroll 0 0 #F0F0F0;
+		@include border-radius(3px 3px 3px 3px);
+		display: block;
+	}
+	.product-image > img:hover {	}
+
 		.info {
 		background-color: #fff;
 		padding: 15px 15px 0;
 
 			h2.name {
 			font-size: 0.9em;
-			font-weight:bold;
+			font-weight:$bold;
 			}
 
 			.desc {
@@ -408,22 +425,15 @@ form.custom div.custom.dropdown{display: inline-block;}
 	width: 58%;
 	}
 
-.product-image > img {
-	background: none repeat scroll 0 0 #F0F0F0;
-	@include border-radius(3px 3px 3px 3px);
-	display: block;
-}
-.product-image > img:hover {
-}
 
 #products-grid {
 	.add-to-links {
-		li{float: left;margin: 0;font-size: 12px;padding-right: 5px; }
-		a {font-size: 11px;font-weight: 700}
+		li{float: left;margin: 0;font-size: 0.8em; padding-right: 5px; }
+		a {font-size: 11px;font-weight: $bold}
 	}
 	.price-box, .actions { width: 90%;clear: both; }
 	.price-box, .products-grid .actions, .products-list .price-box{margin-bottom: 12px;}
-	.price-box .price, .products-list .price{font-weight: 500}
+	.price-box .price, .products-list .price{font-weight: $normal}
 }
 
 // Isotope //
@@ -470,7 +480,7 @@ form.custom div.custom.dropdown{display: inline-block;}
 .category-products ol.products-list { list-style-type: none; padding: 0;
 	.product-image {}
 	.product-shop {}
-	.product-shop h2 { font-size: 18px;font-weight: 500; margin-top: 0;  }
+	.product-shop h2 { font-size: 1.4em; font-weight: $normal; margin-top: 0;  }
 	.item { margin-bottom: 22px; overflow: hidden;  }
 	.item.last { border-bottom: none; }
 }
@@ -491,14 +501,14 @@ form.custom div.custom.dropdown{display: inline-block;}
 	}
 	.block-subtitle {
 		margin-bottom: 9px;
-		font-weight: 200px;
-		font-size: 13px;
+		font-weight: $skinny;
+		font-size: 0.8em;
 	}
 	#narrow-by-list dt {
 		border-bottom: 1px solid #2BA6CB;
 		color: #000000;
-		font-size: 13px;
-		font-weight: 700;
+		font-size: 0.8em;
+		font-weight: $bold;
 		margin: 12px 0 0;
 		padding-bottom: 12px;
 
@@ -519,7 +529,7 @@ form.custom div.custom.dropdown{display: inline-block;}
 
 	}
 }
-.round-inline, .round-box, .round-inline-bare{display: inline-block; padding: 1px 7px 3px; font-weight: 600; font-size: 13px; background: #eee; border: 1px solid rgba(0,0,0,0.1); margin-bottom: 12px; @include border-radius (3px); @include text-shadow (0 1px rgba(255,255,255,0.9)); position: relative;}
+.round-inline, .round-box, .round-inline-bare{display: inline-block; padding: 1px 7px 3px; font-weight: $bold; font-size: 0.8em; background: #eee; border: 1px solid rgba(0,0,0,0.1); margin-bottom: 12px; @include border-radius (3px); @include text-shadow (0 1px rgba(255,255,255,0.9)); position: relative;}
 .round-box {display: box}
 .round-inline-bare{ background: none; border: 0 none; }
 
@@ -529,7 +539,7 @@ form.custom div.custom.dropdown{display: inline-block;}
 
 // Breadcrumbs
 .pager, .sort-by {
-	font-size: 11px;
+	font-size: 0.7em;
 	text-align: center;
 }
 
@@ -560,8 +570,8 @@ form.custom div.custom.dropdown{display: inline-block;}
 }
 
 ul.breadcrumbs { margin-top: 12px;background: 0 none;border: 0;border-bottom: 1px solid #E9E9E9;
-	li{ margin-bottom: 0; font-size: 12px;color: #666; }
-	strong{ font-weight: 700;}
+	li{ margin-bottom: 0; font-size: 0.8em;color: #666; }
+	strong{ font-weight: $bold;}
 	span{ padding-right: 0.5rem;}
 }
 // Footer
@@ -570,10 +580,10 @@ ul.breadcrumbs { margin-top: 12px;background: 0 none;border: 0;border-bottom: 1p
 // Cart Page
 // ----------------------------------------
 
-#shopping-cart-table .product-name, .cart-collaterals h2{font-size: 16px;margin-bottom: 0}
-#shopping-cart-table {border-spacing: 0;empty-cells: show;font-size: 100%;border-radius: 0; border-collapse: separate;
+#shopping-cart-table .product-name, .cart-collaterals h2{font-size: 1em;margin-bottom: 0}
+#shopping-cart-table {border-spacing: 0;empty-cells: show;font-size: 1em;border-radius: 0; border-collapse: separate;
 }
-.cart-collaterals .product-name{font-size: 14px;}
+.cart-collaterals .product-name{font-size: 0.8em;}
 
 #shopping-cart-totals-table {width: 100%; }
 
@@ -601,7 +611,7 @@ ul.breadcrumbs { margin-top: 12px;background: 0 none;border: 0;border-bottom: 1p
 }
 form fieldset {padding: 0;border: none;}
 
-.coupon.shipping h2 {font-size: 16px;}
+.coupon.shipping h2 {font-size: 1em;}
 
 .checkout-types{
 	text-align: right;
@@ -631,15 +641,15 @@ form fieldset {padding: 0;border: none;}
 .opc label {display: inline-block;  }
 #checkoutSteps {list-style-type: none;margin-left: 0}
 #checkoutSteps .step-title {border-bottom: 1px solid #efefef;margin-bottom: 8px}
-#checkoutSteps .step-title h2, #checkoutSteps span.number{font-size: 18px;display: inline-block;font-weight: normal;
+#checkoutSteps .step-title h2, #checkoutSteps span.number{font-size: 1.1em;display: inline-block;font-weight: $normal;
 	display: -moz-inline-stack ;
 	display: inline-block !important;
 	zoom: 1;
 	*display: inline !important;
 
 }
-#checkoutSteps h3 {font-size: 16px; font-weight: normal;}
-#checkoutSteps h4 {font-size: 14px; }
+#checkoutSteps h3 {font-size: 1em; font-weight: $normal;}
+#checkoutSteps h4 {font-size: 0.8em; }
 #checkoutSteps span.number{}
 #checkoutSteps .fields{width: 48%;float: left;margin-right: 10px;}
 #checkoutSteps .wide{width: 97.3%;float: left;}
@@ -746,7 +756,7 @@ footer { background: #555; color: #fff; padding: 10px 0; }
 	background: #fff;
 	text-align: center;
 	color: #006400;
-	font-size: 15px;
+	font-size: 1em;
 	line-height: 14px;
 	text-decoration: none;
 	@include border-radius (15px);
