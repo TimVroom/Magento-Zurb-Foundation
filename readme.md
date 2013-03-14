@@ -27,6 +27,8 @@ Remember that this is an ALPHA-boilerplate, not a production ready theme! The th
 - Implement "Sections" for product page tabs. Possibly, give option in Admin panel to turn off tabs. (http://foundation.zurb.com/docs/components/section.html)
 - Implement "Clearing" for product image galeries. (http://foundation.zurb.com/docs/components/clearing.html)
 - Implement "Tooltips" where appropriate. [ ] Figure out where it would be appropriate. (http://foundation.zurb.com/docs/components/tooltips.html)
+- Make sidebar sticky somehow. Any suggestions?
+- Add iScroll-4 to Sidebar. (http://cubiq.org/iscroll-4)
 - Further remove clunky Magento CSS and optimize it for SCSS.
 
 ##Done!
