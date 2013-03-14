@@ -21,7 +21,6 @@ Remember that this is an ALPHA-boilerplate, not a production ready theme! The th
 
 What's next (A.K.A. The P.L.A.N.):
 - Complete "HTML Page Markup".(http://foundation.zurb.com/docs/index.html#basicHTMLMarkup)
-- Implement proper "jquery.isotope" support so that as the screen shrinks, the columns change from 3 to 2 to 1. (http://isotope.metafizzy.co/)
 - Implement "Orbit" completely with a backend for uploading and managing slides. (http://foundation.zurb.com/docs/components/orbit.html)
 - Add <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' /> to the correct place to fix issues with Orbit not resizing slider properly.
 - Implement "Reveal" for products that have only one image. (http://foundation.zurb.com/docs/components/reveal.html)
@@ -30,12 +29,11 @@ What's next (A.K.A. The P.L.A.N.):
 - Implement "Tooltips" where appropriate. [ ] Figure out where it would be appropriate. (http://foundation.zurb.com/docs/components/tooltips.html)
 - Further remove clunky Magento CSS and optimize it for SCSS.
 
-##Long term plans. After above is complete.
-- Possibly give option for full screen Amazon style layout.
-
 ##Done!
 - Improving this readme with references and more info
 - Upgrade to Foundation 4 from 3.
+- Implement proper "jquery.isotope" support so that as the screen shrinks, the columns take up the whole screen. (http://isotope.metafizzy.co/)
+- Full Screen Layout. (It's the future, embrace it, and use the full realestate of the devices consumers use. Amazon has moved on, why haven't you?)
 
 Currently, a demo is unavailable but at this point it's not about the looks, There is a demo under Waterlee-Boilerplate however. That would give you some idea of where this is going, however, I'm stipping all of the theming components that are in Waterlee, as it's not a pure Foundation 4 theme, which this intends to be. download it, test it and please do provide a constructive feedback. Receiving your feedback and participation will make this worthwhile for everyone.
 
