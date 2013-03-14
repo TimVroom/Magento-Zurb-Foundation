@@ -35,6 +35,8 @@
 /skin/frontend/base/
 /skin/frontend/default/
 /skin/frontend/zurb-foundation/default/.sass-cache/*
+/skin/frontend/zurb-foundation/default/zurb-foundation.sublime-project
+/skin/frontend/zurb-foundation/default/zurb-foundation.sublime-workspace
 /skin/frontend/zurb-foundation/goldyfit
 /skin/install/
 /var/
