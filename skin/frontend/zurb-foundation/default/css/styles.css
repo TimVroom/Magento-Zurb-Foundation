@@ -1177,35 +1177,22 @@ ul.tabs-content .level0 a.level-top { background: #efefef; padding: 10px; margin
 
 .page-title h1 { font-size: 24px; color: #444; font-weight: normal; margin: 0; padding: 0; margin: 24px 0; }
 
-.product-essential .product-shop .product-name h1 { font-size: 26px; font-weight: 300; margin-top: 0; line-height: 28px; margin-bottom: 0; }
-
+.product-essential .product-shop .product-name h1 { font-size: 32px; font-weight: 300; margin-top: 0; line-height: 28px; margin-bottom: 0; }
+.product-essential .product-shop .availability { margin: 6px 0; font-weight: 600; }
+.product-essential .product-shop .availability span { font-weight: 300; }
+.product-essential .product-shop p.email-friend, .product-essential .product-shop p.no-rating { margin-bottom: 0px; }
+.product-essential .product-shop .add-to-cart, .product-essential .product-shop .add-to-links, .product-essential .product-shop .product-options-bottom .add-to-cart, .product-essential .product-shop .product-options-bottom .add-to-links { width: 100%; clear: both; margin-bottom: 12px; overflow: hidden; }
+.product-essential .product-shop .add-to-links { margin-top: 0px; }
+.product-essential .product-shop .add-to-cart { background: none repeat scroll 0 0 #f0f0f0; border: 1px solid #dddddd; border-radius: 3px 3px 3px 3px; -webkit-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; -moz-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; display: inline-block; padding: 6px 12px 10px 12px; width: inherit; }
+.product-essential .product-shop .add-to-cart label, .product-essential .product-shop .add-to-cart input#qty, .product-essential .product-shop .add-to-cart button.button { display: block; float: left; }
+.product-essential .product-shop .add-to-cart label, .product-essential .product-shop .add-to-cart .product-options-bottom label { margin-top: 15px; margin-right: 4px; float: left; font-weight: 600; }
+.product-essential .product-shop .add-to-cart input#qty, .product-essential .product-shop .add-to-cart .product-options-bottom input#qty { width: 32px; margin-top: 6px; margin-right: 4px; float: left; }
+.product-essential .product-shop .add-to-cart button.button { margin-top: 6px; margin-left: 6px; padding: 8px 40px 8px; font-weight: 600; }
 .product-essential .price-box { float: none; font-size: 18px; margin: 10px 0 16px 0; font-weight: 700; }
-
-.product-view h2, .box-collateral h3 { font-size: 14px; }
-
+.product-essential hr { visibility: hidden; }
 .product-essential .or { display: none; }
 
-.product-essential hr { visibility: hidden; }
-
-.product-shop p.email-friend, .product-shop p.no-rating { margin-bottom: 0px; }
-
-.product-shop .availability { margin: 6px 0; font-weight: 600; }
-
-.product-shop .availability span { font-weight: 300; }
-
-.product-shop .add-to-cart, .product-shop .add-to-links, .product-options-bottom .add-to-cart, .product-options-bottom .add-to-links { width: 100%; clear: both; margin-bottom: 12px; overflow: hidden; }
-
-.product-shop .add-to-links { margin-top: 0px; }
-
-.product-shop .add-to-cart { background: none repeat scroll 0 0 #f0f0f0; border: 1px solid #dddddd; border-radius: 3px 3px 3px 3px; -webkit-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; -moz-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; display: inline-block; padding: 6px 12px 10px 12px; width: inherit; }
-
-.product-shop .add-to-cart label, .product-shop .add-to-cart input#qty, .product-shop .add-to-cart button.button { display: block; float: left; }
-
-.product-shop .add-to-cart label, .product-options-bottom label { margin-top: 15px; margin-right: 4px; float: left; font-weight: 600; }
-
-.product-shop .add-to-cart input#qty, .product-options-bottom input#qty { width: 32px; margin-top: 6px; margin-right: 4px; float: left; }
-
-.product-shop .add-to-cart button.button { margin-top: 6px; margin-left: 6px; padding: 8px 40px 8px; font-weight: 600; }
+.product-view h2, .box-collateral h3 { font-size: 14px; }
 
 .short-description { font-size: 14px; line-height: 1.4; }
 
