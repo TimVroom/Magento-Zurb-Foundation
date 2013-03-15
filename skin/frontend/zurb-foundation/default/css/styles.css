@@ -264,7 +264,7 @@ select { width: 100%; }
   .large-block-grid-12:nth-of-type(12n+1) { clear: both; } }
 p.lead { font-size: 1.21875em; line-height: 1.6; }
 
-.subheader { line-height: 1.4; color: #6f6f6f; font-weight: 300; margin-top: 0.2em; margin-bottom: 0.5em; }
+.subheader { line-height: 1.4; color: #919191; font-weight: 300; margin-top: 0.2em; margin-bottom: 0.5em; }
 
 /* Typography resets */
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td { margin: 0; padding: 0; direction: ltr; }
@@ -279,8 +279,8 @@ p { font-family: inherit; font-weight: normal; font-size: 1em; line-height: 1.6;
 p aside { font-size: 0.875em; line-height: 1.35; font-style: italic; }
 
 /* Default header styles */
-h1, h2, h3, h4, h5, h6 { font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; font-weight: bold; font-style: normal; color: #222222; text-rendering: optimizeLegibility; line-height: 1.4; margin-top: 0.2em; margin-bottom: 0.5em; }
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; }
+h1, h2, h3, h4, h5, h6 { font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; font-weight: bold; font-style: normal; color: #444444; text-rendering: optimizeLegibility; line-height: 1.4; margin-top: 0.2em; margin-bottom: 0.5em; }
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #919191; line-height: 0; }
 
 h1 { font-size: emCalc(44px); }
 
@@ -332,11 +332,11 @@ abbr { text-transform: none; }
 
 /* Blockquotes */
 blockquote { margin: 0 0 1.25em; padding: 0.5625em 1.25em 0 1.1875em; border-left: 1px solid #dddddd; }
-blockquote cite { display: block; font-size: 0.8125em; color: #555555; }
+blockquote cite { display: block; font-size: 0.8125em; color: #777777; }
 blockquote cite:before { content: "\2014 \0020"; }
-blockquote cite a, blockquote cite a:visited { color: #555555; }
+blockquote cite a, blockquote cite a:visited { color: #777777; }
 
-blockquote, blockquote p { line-height: 1.6; color: #6f6f6f; }
+blockquote, blockquote p { line-height: 1.6; color: #919191; }
 
 /* Microformats */
 .vcard { display: inline-block; margin: 0 0 1.25em 0; border: 1px solid #dddddd; padding: 0.625em 0.75em; }
@@ -993,18 +993,13 @@ table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoo
 .f-dropdown.medium { max-width: 500px; }
 .f-dropdown.large { max-width: 800px; }
 
-/* Default header styles */
-h1, h2, h3, h4, h5, h6 { font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; font-weight: 700; font-style: normal; color: #222222; text-rendering: optimizeLegibility; line-height: 1.4; margin-top: 0.2em; margin-bottom: 0.5em; }
-
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; }
-
 /* font-face */
-@font-face { font-family: "Source Sans Pro", Arial, sans-serif; src: url("../fonts/general_foundicons.eot"); src: url("../fonts/general_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/general_foundicons.woff") format("woff"), url("../fonts/general_foundicons.ttf") format("truetype"), url('../fonts/general_foundicons.svg#"Source Sans Pro", Arial, sans-serif') format("svg"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "GeneralFoundicons"; src: url("../fonts/general_foundicons.eot"); src: url("../fonts/general_foundicons.eot?#iefix") format("embedded-opentype"), url("../fonts/general_foundicons.woff") format("woff"), url("../fonts/general_foundicons.ttf") format("truetype"), url("../fonts/general_foundicons.svg#GeneralFoundicons") format("svg"); font-weight: normal; font-style: normal; }
 
 /* global foundicon styles */
 [class*="foundicon-"] { display: inline; width: auto; height: auto; line-height: inherit; vertical-align: baseline; background-image: none; background-position: 0 0; background-repeat: repeat; }
 
-[class*="foundicon-"]:before { font-family: "Source Sans Pro", Arial, sans-serif; font-weight: 400; font-style: normal; text-decoration: inherit; }
+[class*="foundicon-"]:before { font-family: "GeneralFoundicons"; font-weight: 400; font-style: normal; text-decoration: inherit; }
 
 /* icons */
 .foundicon-settings:before { content: "\f000"; }
@@ -1101,6 +1096,16 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; col
 
 .foundicon-search:before { content: "\f02e"; }
 
+input.button, button.button { padding-bottom: 0; padding-top: 0; }
+
+.row .row { margin: 0 auto; }
+
+a { color: #27a2e1; }
+
+a:hover { color: #17638B; text-decoration: none; }
+
+strong, b { font-weight: 700; }
+
 .required em { color: #c00000; padding-right: 3px; }
 
 ul.messages li, ul.messages { margin-bottom: 0; border-bottom: 2px solid #dddddd; -webkit-border-radius: 0 0 0 0; -moz-border-radius: 0 0 0 0; -ms-border-radius: 0 0 0 0; -o-border-radius: 0 0 0 0; border-radius: 0 0 0 0; -webkit-box-shadow: 0 0 6px inherit; -moz-box-shadow: 0 0 6px inherit; box-shadow: 0 0 6px inherit; margin-bottom: 0; }
@@ -1114,18 +1119,6 @@ ul.messages .success-msg li { background-color: #7fae00; color: #fff; text-shado
 ul.messages .notice-msg li { background-color: #C76711; color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); }
 
 ul.messages .error-msg li { background-color: #c00000; color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); }
-
-a { color: #27a2e1; }
-
-a:hover { color: #17638B; text-decoration: none; }
-
-h1, h2, h3, h4, h5, h6 { color: #444; font-weight: 700; line-height: 1.25; }
-
-h2 { font-size: 1.4em; margin-bottom: 9px; }
-
-strong, b { font-weight: 700; }
-
-form label { margin-bottom: 0; }
 
 header { position: relative; background: url(../images/bkg/orangenoise.png) top center repeat-x; -webkit-box-shadow: 0 1px 6px #aaaaaa inset; -moz-box-shadow: 0 1px 6px #aaaaaa inset; box-shadow: 0 1px 6px #aaaaaa inset; }
 
@@ -1179,27 +1172,18 @@ ul.tabs-content .level0 a.level-top { background: #efefef; padding: 10px; margin
 
 .video-embed iframe, .video-embed object, .video-embed embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-#inner-wrapper { margin-top: 16px; }
-
-.page-title h1 { font-size: 1.4em; color: #444; font-weight: 200; margin: 0; padding: 0; margin: 24px 0; }
+.page-title h1 { font-size: 1.4em; color: #444; font-weight: 200; padding: 0; margin: 24px 0; }
 
 .product-essential .product-image img { margin: 0 auto; }
+.product-essential #largeImage img { width: 100%; }
 .product-essential .product-shop .product-name h1 { font-weight: 200; margin-top: 0; line-height: 1.2em; margin-bottom: 0; }
 .product-essential .product-shop .availability { margin: 6px 0; font-weight: 700; }
 .product-essential .product-shop .availability span { font-weight: 400; }
 .product-essential .product-shop p.email-friend, .product-essential .product-shop p.no-rating { margin-bottom: 0px; }
-.product-essential .product-shop .add-to-cart, .product-essential .product-shop .add-to-links, .product-essential .product-shop .product-options-bottom .add-to-cart, .product-essential .product-shop .product-options-bottom .add-to-links { width: 100%; clear: both; margin-bottom: 12px; overflow: hidden; }
-.product-essential .product-shop .add-to-links { margin-top: 0px; }
-.product-essential .product-shop .add-to-cart { background: none repeat scroll 0 0 #f0f0f0; border: 1px solid #dddddd; border-radius: 3px 3px 3px 3px; -webkit-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; -moz-box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; box-shadow: 0 0 1px rgba(0, 83, 109, 0.18) inset; display: inline-block; padding: 6px 12px 10px 12px; width: inherit; }
-.product-essential .product-shop .add-to-cart label, .product-essential .product-shop .add-to-cart input#qty, .product-essential .product-shop .add-to-cart button.button { display: block; float: left; }
-.product-essential .product-shop .add-to-cart label, .product-essential .product-shop .add-to-cart .product-options-bottom label { margin-top: 15px; margin-right: 4px; float: left; font-weight: 700; }
-.product-essential .product-shop .add-to-cart input#qty, .product-essential .product-shop .add-to-cart .product-options-bottom input#qty { width: 32px; margin-top: 6px; margin-right: 4px; float: left; }
-.product-essential .product-shop .add-to-cart button.button { margin-top: 6px; margin-left: 6px; padding: 8px 40px 8px; font-weight: 700; }
+.product-essential .product-shop .add-to-links { margin-top: 0px; list-style: none; }
+.product-essential .product-shop .add-to-cart label, .product-essential .product-shop .add-to-cart .product-options-bottom label { font-weight: 700; }
 .product-essential .price-box { float: none; font-size: 1.6em; margin: 10px 0 16px 0; font-weight: 700; }
 .product-essential hr { visibility: hidden; }
-.product-essential .or { display: none; }
-
-.product-view h2, .box-collateral h3 { font-size: 0.9em; }
 
 .short-description { font-size: 0.8em; line-height: 1.4; }
 
@@ -1269,7 +1253,7 @@ form.custom div.custom.dropdown { display: inline-block; }
 #productgrid .product { color: #222; float: left; margin: 5px; position: relative; width: 192px; -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4); -moz-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4); box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4); }
 #productgrid .product .product-image > img { background: none repeat scroll 0 0 #f0f0f0; -webkit-border-radius: 3px 3px 3px 3px; -moz-border-radius: 3px 3px 3px 3px; -ms-border-radius: 3px 3px 3px 3px; -o-border-radius: 3px 3px 3px 3px; border-radius: 3px 3px 3px 3px; display: block; }
 #productgrid .product .info { background-color: #fff; padding: 15px 15px 0; }
-#productgrid .product .info h2.name { font-size: 0.9em; font-weight: 700; }
+#productgrid .product .info h2.name { font-size: 1.1em; font-weight: 400; }
 #productgrid .product .info .desc { font-size: 0.8em; line-height: 1em; margin: 10px 0; }
 #productgrid .product .actions { padding: 10px 15px; background-color: #f2f0f0; *zoom: 1; }
 #productgrid .product .actions:before, #productgrid .product .actions:after { content: " "; display: table; }
@@ -1410,8 +1394,6 @@ form fieldset { padding: 0; border: none; }
 .step { border-bottom: 1px solid #0192dd; padding-bottom: 12px; }
 
 .validation-advice, p.required { color: #C76711; clear: both; }
-
-input.input-text.qty { width: 40px; }
 
 body.off-canvas { padding: 0; margin: 0; }
 

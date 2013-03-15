@@ -7,14 +7,10 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700,400italic);
 
 // Font Variables
-$fontName: 'Source Sans Pro', Arial, sans-serif;
+$font: 'Source Sans Pro', Arial, sans-serif;
 $skinny: 200;
 $normal: 400;
 $bold: 700;
-
-/* Default header styles */
-h1, h2, h3, h4, h5, h6 { font-family: $body-font-family; font-weight: 700; font-style: normal; color: #222222; text-rendering: optimizeLegibility; line-height: 1.4; margin-top: 0.2em; margin-bottom: 0.5em; }
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; }
 
 /* font-face */
 @include face;
@@ -86,6 +82,22 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; col
 @include i-class(smiley,"02d");
 @include i-class(search,"02e");
 
+// Some Foundation fixes. Not sure if this is right, but it fixes the layout of certain things.
+input.button, button.button {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.row .row {
+    margin: 0 auto;
+}
+
+a {color: #27a2e1}
+a:hover {color: #17638B; text-decoration: none;}
+
+strong, b { font-weight: $bold}
+
+// Messages
 .required em{color: #c00000; padding-right: 3px}
 ul.messages li, ul.messages {
 	margin-bottom: 0;  border-bottom: 2px solid #DDDDDD;
@@ -98,21 +110,6 @@ ul.messages li li {border-radius: 0;padding: 10px 12px}
 ul.messages .success-msg li{ background-color: #7fae00; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
 ul.messages .notice-msg li{ background-color: #C76711; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
 ul.messages .error-msg li{ background-color: #c00000; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
-
-a {color: #27a2e1}
-a:hover {color: #17638B; text-decoration: none;}
-
-h1, h2, h3, h4, h5, h6 {
-	color: #444;
-	font-weight: $bold;
-	line-height: 1.25;
-}
-h2 {
-	font-size: 1.4em;
-	margin-bottom: 9px;
-}
-strong, b {font-weight: $bold}
-form label {margin-bottom: 0}
 
 // ----------------------------------------
 // Header
@@ -208,18 +205,23 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 //   Page
 // ---------------------------------------
 
-
-
-
-#inner-wrapper          { margin-top: 16px; }
-.page-title h1          {font-size: 1.4em; color: #444; font-weight: $skinny; margin: 0;padding: 0; margin: 24px 0;}
+.page-title h1 {
+	font-size: 1.4em;
+	color: #444;
+	font-weight: $skinny;
+	padding: 0;
+	margin: 24px 0;
+}
 
 // ---------------------------------------
 //   Product Page
 // ---------------------------------------
 .product-essential {
 	.product-image {
-		img {margin: 0 auto;}
+		img { margin: 0 auto; }
+	}
+	#largeImage {
+		img {width: 100%}
 	}
 	.product-shop {
 		.product-name h1 {
@@ -233,31 +235,13 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 			span {font-weight: $normal;}
 		}
 		p.email-friend, p.no-rating {margin-bottom: 0px;}
-		.add-to-cart, .add-to-links, .product-options-bottom .add-to-cart, .product-options-bottom .add-to-links {width: 100%; clear: both; margin-bottom: 12px; overflow: hidden;}
-		.add-to-links {margin-top: 0px;}
+		.add-to-links { margin-top: 0px; list-style: none;}
 		.add-to-cart {
-			background: none repeat scroll 0 0 #F0F0F0;
-			border: 1px solid #DDDDDD;
-			border-radius: 3px 3px 3px 3px;
-			@include box-shadow (0 0 1px rgba(0, 83, 109, 0.18) inset);
-			display: inline-block;
-			padding: 6px 12px 10px 12px;
-			width: inherit;
 
-			label, input#qty, button.button {
-				display: block;
-				float: left;
-			}
 			label, .product-options-bottom label {
-				margin-top: 15px; margin-right: 4px;float: left;
 				font-weight: $bold;
 			}
-			input#qty, .product-options-bottom input#qty {width: 32px;margin-top: 6px; margin-right: 4px;float: left; }
 			button.button {
-				margin-top: 6px;
-				margin-left: 6px;
-				padding: 8px 40px 8px;
-				font-weight: $bold;
 			}
 		}
 	}
@@ -269,10 +253,8 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 		font-weight: $bold;
 	}
 	hr {visibility: hidden;}
-	.or {display: none;}
+	.or { }
 }
-
-.product-view h2, .box-collateral h3 {font-size: 0.9em}
 
 .short-description{font-size: 0.8em; line-height: 1.4;}
 .short-description br{
@@ -395,8 +377,8 @@ form.custom div.custom.dropdown{display: inline-block;}
 		padding: 15px 15px 0;
 
 			h2.name {
-			font-size: 0.9em;
-			font-weight:$bold;
+			font-size: 1.1em;
+			font-weight:$normal;
 			}
 
 			.desc {
@@ -675,13 +657,6 @@ form fieldset {padding: 0;border: none;}
 
 .validation-advice, p.required {color: #C76711; clear: both;
 }
-
-
-// Form elements
-input.input-text.qty{
-	width: 40px;
-}
-
 
 // Off Canvas
 body.off-canvas { padding: 0; margin: 0; }

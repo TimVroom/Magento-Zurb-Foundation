@@ -33,11 +33,11 @@
                 <input type="hidden" name="related_product" id="related-products-field" value="" />
             </div>
 
-            <div class="product-img-box small-12 large-6 columns">
+            <div class="product-img-box small-12 large-4 push-2 columns">
                 <?php echo $this->getChildHtml('media') ?>
                 <?php echo $this->getChildHtml('product_review') ?>
             </div>
-            <div class="product-shop small-12 large-6 columns">
+            <div class="product-shop small-12 large-4 pull-2 columns">
 
                 <div class="product-name row">
                     <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
@@ -56,15 +56,15 @@
                 </div>
                 <?php echo $this->getChildHtml('extrahint') ?>
                 <?php if (!$this->hasOptions()):?>
-                <div class="add-to-box row">
-                    <?php if($_product->isSaleable()): ?>
-                    <?php echo $this->getChildHtml('addtocart') ?>
-                    <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                        <span class="or"><?php echo $this->__('OR') ?></span>
-                        <?php endif; ?>
+
+                <?php if($_product->isSaleable()): ?>
+                <?php echo $this->getChildHtml('addtocart') ?>
+                <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                    <span class="or"><?php echo $this->__('OR') ?></span>
                     <?php endif; ?>
-                    <?php echo $this->getChildHtml('addto') ?>
-                </div>
+                <?php endif; ?>
+                <?php echo $this->getChildHtml('addto') ?>
+
                 <?php echo $this->getChildHtml('extra_buttons') ?>
 
                 <?php elseif (!$_product->isSaleable()): ?>
@@ -148,3 +148,8 @@
 
     </div>
 </div>
+<ul id="drop1" class="f-dropdown">
+  <li><a href="#">This is a link</a></li>
+  <li><a href="#">This is another</a></li>
+  <li><a href="#">Yet another</a></li>
+</ul>
