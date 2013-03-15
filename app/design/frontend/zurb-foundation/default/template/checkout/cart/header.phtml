@@ -19,11 +19,11 @@
 				$_items = $this->getRecentItems($_cartQty);
 				if(count($_items)):
 			?>
-				<li>
-	                <?php foreach($_items as $_item): ?>
-	                    <?php echo $this->getItemHtml($_item) ?>
-	                <?php endforeach; ?>
-				</li>
+				<li class="items"><ul>
+		                <?php foreach($_items as $_item): ?>
+		                    <?php echo $this->getItemHtml($_item) ?>
+		                <?php endforeach; ?>
+				</ul></li>
 				<li class="quickcart-checkout">
 					<a class="button" href="<?php echo $this->getCheckoutUrl() ?>"><span><?php echo $this->__('Go to Secure Checkout') ?></span></a>
 				</li>

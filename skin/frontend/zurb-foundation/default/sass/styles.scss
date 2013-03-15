@@ -86,6 +86,7 @@ $bold: 700;
 input.button, button.button {
     padding-bottom: 0;
     padding-top: 0;
+
 }
 
 .row .row {
@@ -99,17 +100,58 @@ strong, b { font-weight: $bold}
 
 // Messages
 .required em{color: #c00000; padding-right: 3px}
-ul.messages li, ul.messages {
-	margin-bottom: 0;  border-bottom: 2px solid #DDDDDD;
+
+// Global messages
+
+#inchoo_global_messages {
+	position: fixed;
+	top: 50px;
+	z-index: 9999;
+	width: 100%;
+}
+
+ul.messages {
+	margin-bottom: 0;
+	border-bottom: 2px solid #DDDDDD;
 	@include border-radius(0 0 0 0);
 	@include box-shadow(0 0 6px inherit);
-	margin-bottom: 0;}
-.success-msg{}
-ul.messages li{ display: block; padding:0; font-weight: $bold; font-size: .8em; @include border-radius (3px); @include text-shadow (0 1px rgba(255,255,255,0.9)); position: relative; }
-ul.messages li li {border-radius: 0;padding: 10px 12px}
-ul.messages .success-msg li{ background-color: #7fae00; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
-ul.messages .notice-msg li{ background-color: #C76711; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
-ul.messages .error-msg li{ background-color: #c00000; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
+
+	li {
+		display: block;
+		padding:0;
+		font-weight: $bold;
+		font-size: 1em;
+		@include border-radius (3px);
+		@include text-shadow (0 1px rgba(255,255,255,0.9));
+		position: relative;
+
+		li {border-radius: 0; padding: 10px 12px}
+	}
+	.success-msg {}
+	.success-msg li { background-color: #7fae00; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
+	.notice-msg li { background-color: #C76711; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
+	.error-msg li { background-color: #c00000; color: #fff; @include text-shadow(0 -1px rgba(0,0,0,0.3)); }
+}
+
+#inchoo_global_messages ul ul{margin: 0}
+
+#inchoo_global_messages_close {
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	z-index: 10000;
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	text-align: center;
+	color: #006400;
+	font-size: 1em;
+	line-height: 14px;
+	text-decoration: none;
+	@include border-radius (15px);
+}
+
 
 // ----------------------------------------
 // Header
@@ -517,11 +559,13 @@ form.custom div.custom.dropdown{display: inline-block;}
 
 // Toolbar, Pagination, Sort by
 
+.pagination li { font-size: 1em; }
+
 // Prices
 
 // Breadcrumbs
 .pager, .sort-by {
-	font-size: 0.7em;
+	font-size: 1em;
 	text-align: center;
 }
 
@@ -561,6 +605,26 @@ ul.breadcrumbs {
 // ----------------------------------------
 // Cart Page
 // ----------------------------------------
+.quickcart.dropdown {
+    background: #1E1E1E;
+    color: #FFF;
+
+    li.items {
+	    max-height:400px;
+	    overflow: auto;
+    }
+
+	li a.button {
+	font-weight: $bold;
+	@include button-style;
+	top: 0;
+	font-size: 1em;
+	}
+
+    .no-items-in-cart {
+    	padding: 10px;
+	}
+}
 
 #shopping-cart-table .product-name, .cart-collaterals h2{font-size: 1em;margin-bottom: 0}
 #shopping-cart-table {border-spacing: 0;empty-cells: show;font-size: 1em;border-radius: 0; border-collapse: separate;
@@ -710,29 +774,3 @@ footer { background: #555; color: #fff; padding: 10px 0; }
 }
 
 .orbit-wrapper {}
-
-// Global messages
-
-#inchoo_global_messages {
-	position: relative;
-	z-index: 9999;
-}
-
-#inchoo_global_messages ul ul{margin: 0}
-
-#inchoo_global_messages_close {
-	position: absolute;
-	top: 13px;
-	right: 13px;
-	z-index: 10000;
-	display: block;
-	width: 15px;
-	height: 15px;
-	background: #fff;
-	text-align: center;
-	color: #006400;
-	font-size: 1em;
-	line-height: 14px;
-	text-decoration: none;
-	@include border-radius (15px);
-}

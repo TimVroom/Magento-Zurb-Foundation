@@ -1,31 +1,5 @@
 <?php
 /**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     base_default
- * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
-?>
-<?php
-/**
  * Product list toolbar
  *
  * @see Mage_Catalog_Block_Product_List_Toolbar
@@ -33,8 +7,8 @@
 ?>
 <?php if($this->getCollection()->getSize()): ?>
 
-    <div class="pager">
-        <p class="amount">
+    <div class="pager row">
+        <p class="amount small-12 large-4 columns">
             <?php if($this->getLastPageNum()>1): ?>
                 <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
             <?php else: ?>
@@ -42,16 +16,23 @@
             <?php endif; ?>
         </p>
 
-        <div class="limiter">
+        <div class="limiter small-12 large-4 columns">
             <form class="custom" action="">
-            <label><?php echo $this->__('Show') ?></label>
-            <select onchange="setLocation(this.value)">
-            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
-                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
-                    <?php echo $_limit ?>
-                </option>
-            <?php endforeach; ?>
-            </select> <?php echo $this->__('per page') ?>
+                <div class="row collapse">
+                    <div class="small-4 columns">
+                        <span class="prefix"><?php echo $this->__('Show') ?></span>
+                    </div>
+                    <div class="small-4 columns">
+                        <select>onchange="setLocation(this.value)">
+                        <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+                            <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                                <?php echo $_limit ?>
+                            </option>
+                        <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="small-4 columns"><span class="postfix"><?php echo $this->__('per page') ?></span></div>
+                </div>
             </form>
         </div>
 
@@ -60,9 +41,9 @@
     </div>
 
     <?php if( $this->isExpanded() ): ?>
-    <div class="sorter">
+    <div class="sorter row">
         <?php if( $this->isEnabledViewSwitcher() ): ?>
-        <dl class="sub-nav">
+        <dl class="sub-nav small-12 large-6 columns">
             <?php $_modes = $this->getModes(); ?>
             <?php if($_modes && count($_modes)>1): ?>
             <dt><?php echo $this->__('View as') ?>:</dt>
@@ -77,22 +58,28 @@
         </dl>
         <?php endif; ?>
 
-        <div class="sort-by">
+        <div class="sort-by small-12 large-6 columns">
             <form class="custom" action="">
-                    <label><?php echo $this->__('sort by:') ?></label>
-                    <select onchange="setLocation(this.value)">
-                           <option value="<?php echo $this->getOrderUrl('position', 'asc') ?>"<?php if($this->isOrderCurrent('position') && $this->getCurrentDirection() == 'asc'): ?> selected="selected"<?php endif; ?>>
-                               Position
-                           </option>
-                           <option value="<?php echo $this->getOrderUrl('price', 'asc') ?>"<?php if($this->isOrderCurrent('price') && $this->getCurrentDirection() == 'asc'): ?> selected="selected"<?php endif; ?>>
-                               Price Low to High
-                           </option>
-                           <option value="<?php echo $this->getOrderUrl('price', 'desc') ?>"<?php if($this->isOrderCurrent('price') && $this->getCurrentDirection() == 'desc'): ?> selected="selected"<?php endif; ?>>
-                               Price High to Low
-                           </option>
-                    </select>
-               </form>
-                </div>    </div>
+                <div class="row collapse">
+                    <div class="small-4 columns">
+                        <span class="prefix">Sort By:</span>
+                    </div>
+                    <div class="small-8 columns">
+                        <select onchange="setLocation(this.value)">
+                               <option value="<?php echo $this->getOrderUrl('position', 'asc') ?>"<?php if($this->isOrderCurrent('position') && $this->getCurrentDirection() == 'asc'): ?> selected="selected"<?php endif; ?>>
+                                   Position
+                               </option>
+                               <option value="<?php echo $this->getOrderUrl('price', 'asc') ?>"<?php if($this->isOrderCurrent('price') && $this->getCurrentDirection() == 'asc'): ?> selected="selected"<?php endif; ?>>
+                                   Price Low to High
+                               </option>
+                               <option value="<?php echo $this->getOrderUrl('price', 'desc') ?>"<?php if($this->isOrderCurrent('price') && $this->getCurrentDirection() == 'desc'): ?> selected="selected"<?php endif; ?>>
+                                   Price High to Low
+                               </option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <?php endif; ?>
-
 <?php endif ?>
