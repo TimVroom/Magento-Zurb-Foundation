@@ -26,7 +26,7 @@
                 </ul>
                 <ul class="right">
                     <li class="has-dropdown">
-                        <a href="#"><i class="foundicon-smiley"></i> Profile</a>
+                        <a href="#"><i class="foundicon-smiley"></i> My Profile</a>
                         <ul class="dropdown">
                             <li><a href="<?php echo $this->getUrl('customer/account') ?>">My account</a></li>
                             <li>
@@ -40,10 +40,17 @@
                     </li>
                     <li class="divider"></li>
                     <?php echo $this->getChildHtml('quickcart') ?>
-                    <li class="divider"></li>
-                    <li>
-                        <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><i class="foundicon-right-arrow"></i> Go to Secure Checkout</a>
-                    </li>
+
+                    <?php $count = $this->helper('checkout/cart')->getSummaryCount(); ?>
+                    <?php if($count == 0):?>
+                    <?php endif; ?>
+
+                    <?php if($count >= 1):?>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><i class="foundicon-right-arrow"></i> Go to Secure Checkout</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </section>
         </nav>

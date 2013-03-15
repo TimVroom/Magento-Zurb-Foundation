@@ -83,15 +83,12 @@ $bold: 700;
 @include i-class(search,"02e");
 
 // Some Foundation fixes. Not sure if this is right, but it fixes the layout of certain things.
-input.button, button.button {
-    padding-bottom: 0;
-    padding-top: 0;
-
-}
 
 .row .row {
     margin: 0 auto;
 }
+
+// Global Styles
 
 a {color: #27a2e1}
 a:hover {color: #17638B; text-decoration: none;}
@@ -248,7 +245,7 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 // ---------------------------------------
 
 .page-title h1 {
-	font-size: 1.4em;
+	font-size: 2.5em;
 	color: #444;
 	font-weight: $skinny;
 	padding: 0;
@@ -337,16 +334,17 @@ ul.tabs-content .level0 a.level-top{background: #efefef;padding: 10px; margin: 0
 // ---------------------------------------
 //   Catalog Page
 // ---------------------------------------
+.col-main.row {width: 90%;}
 .toolbar, .toolbar-bottom   	{clear:both;}
 .sorter												{padding-bottom: 6px;}
 .sorter form, .pager form{margin: 0}
-.page-title.category-title h1	{font-size: 1.8em;font-weight: $bold;margin: 0;  }
+.page-title.category-title h1	{font-size: 3em;font-weight: $skinny;margin: 0;  }
 
 .price-box                  {}
 .price-box p                {margin-bottom: 2px}
 
 .minimal-price-link         {  background: #efefef; font-size: 11px; padding: 2px 4px; line-height: 14px }
-.col-main nine columns			{	width: 71.9%;}
+
 .add-to-links               {margin:12px 0;}
 .add-to-links li            {margin: 0 4px 0 0; float: left;}
 
@@ -559,11 +557,14 @@ form.custom div.custom.dropdown{display: inline-block;}
 
 // Toolbar, Pagination, Sort by
 
+.pager {display: none;}
+.toolbar-bottom {
+	.pager {display: inherit;}
+	.sorter {display: none; }
+}
+
 .pagination li { font-size: 1em; }
 
-// Prices
-
-// Breadcrumbs
 .pager, .sort-by {
 	font-size: 1em;
 	text-align: center;
@@ -576,7 +577,6 @@ form.custom div.custom.dropdown{display: inline-block;}
 
 }
 .pager .amount {
-
 	margin: 0;
 }
 .pager .limiter {
@@ -595,11 +595,14 @@ form.custom div.custom.dropdown{display: inline-block;}
 	select { width: 70%; }
 }
 
+// Breadcrumbs
+
 ul.breadcrumbs {
 	li {  }
 	strong { }
 	span {  }
 }
+
 // Footer
 
 // ----------------------------------------
@@ -715,8 +718,6 @@ form fieldset {padding: 0;border: none;}
 //   My Account
 // ----------------------------------------
 
-
-
 // Messages
 
 .validation-advice, p.required {color: #C76711; clear: both;
@@ -734,7 +735,7 @@ footer { background: #555; color: #fff; padding: 10px 0; }
 
 .paneled .row { width: 100%; }
 
-[role="main"]:before { content: " "; position: absolute; z-index: -1; top: 0; left: -100%; width: 100%; height: 100%;  }
+[role="main"]:before { content: ""; position: absolute; z-index: -1; top: 0; left: -100%; width: 100%; height: 100%;  }
 
 [role="complementary"], [role="main"] { width: 100%; padding: 0 15px; display: block; position: relative; z-index: 1;  @include transition(0.25s all ease-in); }
 
@@ -750,8 +751,8 @@ footer { background: #555; color: #fff; padding: 10px 0; }
 
 [role="navigation"]#topMenu ul { margin-top: 0; }
 
-.js [role="complementary"] { margin-left: -100%; width: 80%; float: left; z-index: 1; }
-.js [role="main"] { margin-left: 0;  @include border-radius(3px); float: right; z-index: 2; position: relative; }
+.js [role="complementary"] { margin-left: -100%; width: 80%; float: left; z-index: 2; }
+.js [role="main"] { margin-left: 0;  @include border-radius(3px); float: right; z-index: 1; position: relative; }
 .js .paneled [role="main"] { width: 500%; overflow: hidden; float: none; position: relative; left: 0; @include transition(0.15s all ease-in); }
 .js .page-panel { min-height: 400px; float: left; margin: 0; width: 20%; }
 
