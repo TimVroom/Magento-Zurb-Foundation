@@ -62,19 +62,19 @@
     <?php if( $this->isExpanded() ): ?>
     <div class="sorter">
         <?php if( $this->isEnabledViewSwitcher() ): ?>
-        <p class="view-mode">
+        <dl class="sub-nav">
             <?php $_modes = $this->getModes(); ?>
             <?php if($_modes && count($_modes)>1): ?>
-            <label><?php echo $this->__('View as') ?>:</label>
+            <dt><?php echo $this->__('View as') ?>:</dt>
             <?php foreach ($this->getModes() as $_code=>$_label): ?>
                 <?php if($this->isModeActive($_code)): ?>
-                    <strong title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></strong>&nbsp;
+                    <dd class="active"><a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a></dd>
                 <?php else: ?>
-                    <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a>&nbsp;
+                    <dd><a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></a></dd>
                 <?php endif; ?>
             <?php endforeach; ?>
             <?php endif; ?>
-        </p>
+        </dl>
         <?php endif; ?>
 
         <div class="sort-by">
