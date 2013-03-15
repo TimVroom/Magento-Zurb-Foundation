@@ -18,6 +18,18 @@
         </reference>
     </reference>
 
+    <reference name="header">
+            <!-- Quick Cart Dropdown -->
+                <block type="checkout/cart_sidebar" name="quickcart" template="checkout/cart/header.phtml">
+            <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                        <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                        <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+        </block>
+    </reference>
+    <reference name="top.links">
+        <remove name="checkout_cart_link"/>
+    </reference>
+
     <!-- Remove callouts and rarely used stuff globally -->
 
     <remove name="right.poll"/>

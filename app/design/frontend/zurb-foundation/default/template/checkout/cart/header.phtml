@@ -1,0 +1,35 @@
+<?php if ($this->getIsNeedToDisplaySideBar()):?>
+<?php $_cartQty = $this->getSummaryCount() ?>
+<li class="has-dropdown">
+   	                        <?php
+                        $count = $this->helper('checkout/cart')->getSummaryCount();  //get total items in cart
+                        $total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); //get total price
+                        ?>
+                        <?php if($count == 0):?>
+                        <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><i class="foundicon-cart"></i> My Cart</a>
+                        <?php endif; ?>
+                        <?php if($count == 1):?>
+                        <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><i class="foundicon-cart"></i> My Cart - <?php echo $this->__(' 1 Item', $count) ?> (<?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>)</a>
+                        <?php endif; ?>
+                        <?php if($count >= 2):?>
+                        <a class="cartgo" href="<?php echo $this->getUrl('checkout/cart') ?>"><i class="foundicon-cart"></i> My Cart - <?php echo $this->__(' %s Items', $count) ?> (<?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>)</a>
+                        <?php endif; ?>
+	<ul class="quickcart dropdown">
+	        <?php
+				$_items = $this->getRecentItems($_cartQty);
+				if(count($_items)):
+			?>
+				<li>
+	                <?php foreach($_items as $_item): ?>
+	                    <?php echo $this->getItemHtml($_item) ?>
+	                <?php endforeach; ?>
+				</li>
+				<li class="quickcart-checkout">
+					<a class="button" href="<?php echo $this->getCheckoutUrl() ?>"><span><?php echo $this->__('Go to Secure Checkout') ?></span></a>
+				</li>
+	         <?php else: ?>
+	         	<li class="no-items-in-cart"><?php echo $this->__('You have no items in your shopping cart.') ?></li>
+	         <?php endif ?>
+	</ul>
+</li>
+<?php endif ?>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <FastDivision_QuickCart>
+            <version>0.1.0</version>
+        </FastDivision_QuickCart>
+    </modules>
+    <frontend>
+        <routers>
+	        <checkout>
+			<args>
+				<modules>
+					<FastDivision_QuickCart before="Mage_Checkout">TheIXO_QuickCart_Checkout</FastDivision_QuickCart>
+				</modules>
+			</args>
+		</checkout>
+        </routers>
+    </frontend>
+</config>
