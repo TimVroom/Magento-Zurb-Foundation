@@ -46,7 +46,6 @@
         <action method="addItem"><type>skin_js</type><name>js/foundation/foundation.cookie.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/foundation.dropdown.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/foundation.forms.js</name><params/></action>
-        <action method="addItem"><type>skin_js</type><name>js/foundation/foundation.magellan.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/foundation.orbit.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/foundation.reveal.js</name><params/></action>
         <action method="addItem"><type>skin_js</type><name>js/foundation/foundation.section.js</name><params/></action>

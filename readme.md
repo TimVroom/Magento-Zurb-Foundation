@@ -24,9 +24,7 @@ Remember that this is an ALPHA-boilerplate, not a production ready theme! The th
 ##What's next (A.K.A. The P.L.A.N.):
 - Implement "Orbit" completely with a backend for uploading and managing slides. (http://foundation.zurb.com/docs/components/orbit.html)
 - Add <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' /> to the correct place to fix issues with Orbit not resizing slider properly.
-- Implement "Reveal" for products that have only one image. (http://foundation.zurb.com/docs/components/reveal.html)
 - Implement "Sections" for product page tabs. Possibly, give option in Admin panel to turn off tabs. (http://foundation.zurb.com/docs/components/section.html)
-- Implement "Clearing" for product image galeries. (http://foundation.zurb.com/docs/components/clearing.html)
 - Implement "Tooltips" where appropriate. [ ] Figure out where it would be appropriate. (http://foundation.zurb.com/docs/components/tooltips.html)
 - Make sidebar sticky somehow. Any suggestions?
 - Add iScroll-4 to Sidebar. (http://cubiq.org/iscroll-4)

@@ -77,10 +77,10 @@
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
     <h2><?php echo $this->__('More Views') ?></h2>
-    <ul class="block-grid five-up">
+    <ul class="small-block-grid-2 large-block-grid-4 clearing-thumbs" data-clearing>
     <?php foreach ($this->getGalleryImages() as $_image): ?>
         <li>
-            <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile()); ?>" title="<?php echo $_product->getName();?>" onclick="$('image').src = this.href; return false;">
+            <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile()); ?>" title="<?php echo $_product->getName();?>">
               <!-- The below should remain the same as before -->
               <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(70, 70); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
             </a>
