@@ -1322,11 +1322,6 @@ form.custom div.custom.dropdown { display: inline-block; }
 .sort-by label, .sort-by select { display: inline-block; line-height: 22px; }
 .sort-by select { width: 70%; }
 
-ul.breadcrumbs { margin-top: 12px; background: 0 none; border: 0; border-bottom: 1px solid #e9e9e9; }
-ul.breadcrumbs li { margin-bottom: 0; font-size: 0.8em; color: #666; }
-ul.breadcrumbs strong { font-weight: 700; }
-ul.breadcrumbs span { padding-right: 0.5rem; }
-
 #shopping-cart-table .product-name, .cart-collaterals h2 { font-size: 1em; margin-bottom: 0; }
 
 #shopping-cart-table { border-spacing: 0; empty-cells: show; font-size: 1em; border-radius: 0; border-collapse: separate; }
