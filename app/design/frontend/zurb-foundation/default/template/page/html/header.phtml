@@ -38,14 +38,14 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="divider"></li>
-                    <?php echo $this->getChildHtml('quickcart') ?>
 
                     <?php $count = $this->helper('checkout/cart')->getSummaryCount(); ?>
                     <?php if($count == 0):?>
                     <?php endif; ?>
 
                     <?php if($count >= 1):?>
+                        <li class="divider"></li>
+                        <?php echo $this->getChildHtml('quickcart') ?>
                         <li class="divider"></li>
                         <li>
                             <a class="cartgo" href="<?php echo $this->getUrl('checkout') ?>"><i class="foundicon-right-arrow"></i> Go to Secure Checkout</a>
