@@ -50,8 +50,7 @@
 
 		$('#productgrid').isotope({
 		masonry: {
-		columnWidth: 200,
-		gutterWidth: 5
+		gutterWidth: 15
 		}
 		});
 

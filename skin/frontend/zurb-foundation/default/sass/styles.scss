@@ -394,46 +394,38 @@ form.custom div.custom.dropdown{display: inline-block;}
 
 #productgrid {
 	width: 100%;
-	margin: 0 auto 20px;
+	margin: 0 auto;
 
 	.product {
 	color: #222;
 	float: left;
-	margin: 5px;
 	position: relative;
-	width: 192px;
-	@include box-shadow(0 1px 3px rgba(34,25,25,0.4));
+	width: 225px;
+	margin: 7px 0;
 
-	.product-image > img {
-		background: none repeat scroll 0 0 #F0F0F0;
-		@include border-radius(3px 3px 3px 3px);
-		display: block;
-	}
+	.product-image > img {	}
 	.product-image > img:hover {	}
 
-		.info {
-		background-color: #fff;
-		padding: 15px 15px 0;
-
-			h2.name {
-			font-size: 1.1em;
-			font-weight:$normal;
-			}
-
-			.desc {
-			font-size: 0.8em;
-			line-height: 1em;
-			margin: 10px 0;
-			}
-		}
-
-		.actions {
-		padding: 10px 15px;
-		background-color: #f2f0f0;
+	.info {
 		@include clearfix;
 
-		.price-box {float:left; padding-top: 3px;}
-		.button {float:right; margin: 0;}
+		h2.name {
+			font-size: 1.1em;
+			font-weight:$normal;
+			height: 65px;
+		}
+		.price-box { float:left; padding-top: 3px;
+			.price { font-size: 1.4em}
+		}
+
+	}
+
+		.actions {
+		margin: 10px 0;
+		@include clearfix;
+
+
+		.button {float:left; margin: 0;}
 		}
 	}
 }
@@ -646,8 +638,8 @@ ul.breadcrumbs {
 
 	tbody tr {
 		td {vertical-align: middle;
-			.product-image { display: block;float: left }
-			.product-name { display: block;float: left }
+			.product-image { display: block; float: left }
+			.product-name { display: block; float: left }
 		}
 		td.cart-image { width: 90px}
 		td.cart-name {}
