@@ -412,7 +412,7 @@ form.custom div.custom.dropdown{display: inline-block;}
 		h2.name {
 			font-size: 1.1em;
 			font-weight:$normal;
-			height: 65px;
+			height: 65px; //Why? So that up to line 3, the product grid lines up.
 		}
 		.price-box { padding-top: 3px;
 			p { margin: 0; line-height: 1;}
