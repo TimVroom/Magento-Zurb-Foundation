@@ -32,17 +32,21 @@
  */
 ?>
 <div class="cart">
-    <div class="page-title title-buttons">
-        <h1><?php echo $this->__('Shopping Cart') ?></h1>
-        <?php if(!$this->hasError()): ?>
-        <ul class="checkout-types">
-        <?php foreach ($this->getMethods('top_methods') as $method): ?>
-            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-            <li><?php echo $methodHtml; ?></li>
+    <div class="page-title title-buttons row">
+        <div class="small-12 large-6 columns">
+            <h1><?php echo $this->__('Shopping Cart') ?></h1>
+        </div>
+        <div class="small-12 large-6 columns">
+            <?php if(!$this->hasError()): ?>
+            <ul class="checkout-types">
+            <?php foreach ($this->getMethods('top_methods') as $method): ?>
+                <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                <li><?php echo $methodHtml; ?></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            </ul>
             <?php endif; ?>
-        <?php endforeach; ?>
-        </ul>
-        <?php endif; ?>
+        </div>
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
@@ -113,13 +117,13 @@
         </fieldset>
     </form>
     <div class="row">
-    <div class="coupon shipping columns seven">
-        <div class="row">
-        <div class="columns six"><?php echo $this->getChildHtml('coupon') ?></div>
-        <div class="columns six"><?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?></div>
+        <div class="coupon shipping columns small-12 medium-6 large-7">
+            <div class="row">
+                <div class="columns small-12 medium-6 large-6"><?php echo $this->getChildHtml('coupon') ?></div>
+                <div class="columns small-12 medium-6 large-6"><?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?></div>
+            </div>
         </div>
-    </div>
-        <div class="totals columns five">
+        <div class="totals small-12 medium-5 large-5 columns">
             <?php echo $this->getChildHtml('totals'); ?>
             <?php if(!$this->hasError()): ?>
             <ul class="checkout-types">
@@ -131,7 +135,6 @@
             </ul>
             <?php endif; ?>
         </div>
-
     </div>
     <div class="cart-collaterals row">
         <div class="col2-set">
@@ -139,6 +142,5 @@
                 <?php echo $this->getChildHtml('crosssell') ?>
             </div>
         </div>
-
     </div>
 </div>

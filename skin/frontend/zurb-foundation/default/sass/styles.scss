@@ -191,7 +191,6 @@ nav.top-bar i {
 }
 
 
-.quick-access ul li, header .links li, .breadcrumbs li, .limiter li, .pages li{ float:left;}
 #mobi-nav nav {border:0 none;}
 #mobi-nav ul li .level0 {display: none;}
 #wub-wub-nav{padding-top: 12px;
@@ -509,6 +508,9 @@ form.custom div.custom.dropdown{display: inline-block;}
 // --- Layer navigation
 
 .block-layered-nav {
+	div.block-title strong { font-weight: 200;
+		span { font-size: 1.6em;
+		}}
 	ol {
 		list-style-type: none;
 		margin-bottom: 4px;
@@ -662,8 +664,14 @@ form fieldset {padding: 0;border: none;}
 
 .coupon.shipping h2 {font-size: 1em;}
 
-.checkout-types{
+.checkout-types {
 	text-align: right;
+	margin: 24px 0;
+	list-style: none;
+
+	button {
+		margin:0;
+	}
 }
 
 .cart-collaterals{
