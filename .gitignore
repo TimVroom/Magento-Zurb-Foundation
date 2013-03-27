@@ -48,6 +48,6 @@
 /app/etc/
 /media/
 /trt.html
-/.gitignore
-/.gitattributes
-/sftp-config.json
+.gitignore
+.gitattributes
+sftp-config.json
