@@ -30,7 +30,7 @@
 <div class="add-to-cart row collapse">
     <?php if(!$_product->isGrouped()): ?>
     <div class="small-2 columns">
-	    <span class="prefix"><label for="qty"><?php echo $this->__('Pieces:') ?></label></span>
+	    <span class="prefix"><label for="qty"><?php echo $this->__('Qty:') ?></label></span>
     </div>
     <div class="small-2 columns">
 	    <input type="number" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
