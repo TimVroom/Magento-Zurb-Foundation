@@ -409,15 +409,16 @@ form.custom div.custom.dropdown{display: inline-block;}
 
 	.info {
 		@include clearfix;
-
 		h2.name {
 			font-size: 1.1em;
 			font-weight:$normal;
 			height: 65px;
 		}
-		.price-box { float:left; padding-top: 3px;
+		.price-box { padding-top: 3px;
+			p { margin: 0; line-height: 1;}
 			.price { font-size: 1.4em}
 		}
+		.ratings { }
 
 	}
 
