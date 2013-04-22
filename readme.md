@@ -25,7 +25,7 @@ Remember that this is an ALPHA-boilerplate, not a production ready theme! The th
 - Implement "Orbit" completely with a backend for uploading and managing slides. (http://foundation.zurb.com/docs/components/orbit.html)
 - Add <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' /> to the correct place to fix issues with Orbit not resizing slider properly.
 - Implement "Sections" for product page tabs. Possibly, give option in Admin panel to turn off tabs. (http://foundation.zurb.com/docs/components/section.html)
-- Implement "Tooltips" where appropriate. [ ] Figure out where it would be appropriate. (http://foundation.zurb.com/docs/components/tooltips.html)
+- Implement "Tooltips" where appropriate. Figure out where it would be appropriate. (http://foundation.zurb.com/docs/components/tooltips.html)
 - Make sidebar sticky somehow. Any suggestions?
 - Add iScroll-4 to Sidebar. (http://cubiq.org/iscroll-4)
 - Further remove clunky Magento CSS and optimize it for SCSS.
@@ -42,6 +42,8 @@ Further, this is my first time doing anything with Git or Github, so I'm still t
 - Download Sublime Text 2.
 - If on Windows:
 	- Download GitHub's application, it's awesome and comes with a great command line. Hit the [Clone in Windows] button on top.
+	- Download and install Compass (http://compass-style.org/)
+	- Download latest Zurb Foundation, and extract it to "%HOMEPATH%\.compass\extensions\foundation-master"
 	- Buy Sublime Text 2 (http://www.sublimetext.com/2) It's well worth it, and my fave editor.
 	- Install the Compass Bundle for Sublime Text 2 (https://github.com/CristinaSolana/Compass-ST2-Bundle)
 	- Open the Zurb-Foundation.sublime-project (skin/frontend/zurb-foundation/default/) in Sublime Text 2 and press Tools > Build so that the SCSS gets built.
