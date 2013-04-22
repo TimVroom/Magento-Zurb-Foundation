@@ -30,7 +30,7 @@ Remember that this is an ALPHA-boilerplate, not a production ready theme! The th
 - Add iScroll-4 to Sidebar. (http://cubiq.org/iscroll-4)
 - Further remove clunky Magento CSS and optimize it for SCSS.
 
-Currently, a demo is unavailable but at this point it's not about the looks, There is a demo under Waterlee-Boilerplate however. That would give you some idea of where this is going, however, I'm stipping all of the theming components that are in Waterlee, as it's not a pure Foundation 4 theme, which this intends to be. download it, test it and please do provide a constructive feedback. Receiving your feedback and participation will make this worthwhile for everyone.
+Currently, a demo is unavailable but at this point it's not about the looks, There is a demo under Waterlee-Boilerplate however. That would give you some idea of where this is going, however, I'm stripping all of the theming components that are in Waterlee, as it's not a pure Foundation 4 theme, which this intends to be. download it, test it and please do provide a constructive feedback. Receiving your feedback and participation will make this worthwhile for everyone.
 
 Also, I'm not terribly good with PHP or JS, most of what I know comes from stitching together random pieces of PHP around the internet after Googling my proble, so I'm always happy for somone to take a look at the code and make sure it's up to snuff.
 

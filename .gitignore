@@ -52,3 +52,4 @@
 .gitignore
 .gitattributes
 sftp-config.json
+bridge.php

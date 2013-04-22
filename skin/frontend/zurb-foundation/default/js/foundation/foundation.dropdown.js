@@ -6,15 +6,17 @@
   Foundation.libs.dropdown = {
     name : 'dropdown',
 
-    version : '4.0.0',
+    version : '4.1.0',
 
     settings : {
-      activeClass: 'open'
+      activeClass: 'open',
+      opened: function(){},
+      closed: function(){}
     },
 
     init : function (scope, method, options) {
       this.scope = scope || this.scope;
-      Foundation.inherit(this, 'throttle');
+      Foundation.inherit(this, 'throttle scrollLeft');
 
       if (typeof method === 'object') {
         $.extend(true, this.settings, method);
@@ -35,22 +37,26 @@
     events : function () {
       var self = this;
 
-      $(this.scope).on('click.fndtn.dropdown', '[data-dropdown]', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        self.toggle($(this));
-      });
+      $(this.scope)
+        .on('click.fndtn.dropdown', '[data-dropdown]', function (e) {
+            e.preventDefault();
+            self.toggle($(this));
+        })
+        .on('opened.fndtn.dropdown', '[data-dropdown-content]', this.settings.opened)
+        .on('closed.fndtn.dropdown', '[data-dropdown-content]', this.settings.closed);
 
-      $('*, html, body').on('click.fndtn.dropdown', function (e) {
-        if (!$(e.target).data('dropdown')) {
-          $('[data-dropdown-content]')
-            .css('left', '-99999px')
-            .removeClass(self.settings.activeClass);
+      $('body').on('click.fndtn.dropdown', function (e) {
+        var parent = $(e.target).closest('[data-dropdown-content]');
+
+        if ($(e.target).data('dropdown')) {
+          return;
         }
-      });
+        if (parent.length > 0 && ($(e.target).is('[data-dropdown-content]') || $.contains(parent.first()[0], e.target))) {
+          e.stopPropagation();
+          return;
+        }
 
-      $('[data-dropdown-content]').on('click.fndtn.dropdown', function (e) {
-        e.stopPropagation();
+        self.close.call(self, $('[data-dropdown-content]'));
       });
 
       $(window).on('resize.fndtn.dropdown', self.throttle(function () {
@@ -60,19 +66,34 @@
       this.settings.init = true;
     },
 
-    toggle : function (target, resize) {
-      var dropdown = $('#' + target.data('dropdown'));
+    close: function (dropdown) {
+      var self = this;
+      dropdown.each(function () {
+        if ($(this).hasClass(self.settings.activeClass)) {
+          $(this)
+            .css(Foundation.rtl ? 'right':'left', '-99999px')
+            .removeClass(self.settings.activeClass);
+          $(this).trigger('closed');
+        }
+      });
+    },
 
-      $('[data-dropdown-content]').not(dropdown).css('left', '-99999px');
-
-      if (dropdown.hasClass(this.settings.activeClass)) {
-        dropdown
-          .css('left', '-99999px')
-          .removeClass(this.settings.activeClass);
-      } else {
+    open: function (dropdown, target) {
         this
           .css(dropdown
             .addClass(this.settings.activeClass), target);
+        dropdown.trigger('opened');
+    },
+
+    toggle : function (target, resize) {
+      var dropdown = $('#' + target.data('dropdown'));
+
+      this.close.call(this, $('[data-dropdown-content]').not(dropdown));
+
+      if (dropdown.hasClass(this.settings.activeClass)) {
+        this.close.call(this, dropdown);
+      } else {
+        this.open.call(this, dropdown, target);
       }
     },
 
@@ -86,7 +107,9 @@
     },
 
     css : function (dropdown, target) {
-      var offset = target.offset();
+      var position = target.position();
+      position.top += target.offsetParent().offset().top;
+      position.left += target.offsetParent().offset().left;
 
       if (this.small()) {
         dropdown.css({
@@ -94,13 +117,22 @@
           width: '95%',
           left: '2.5%',
           'max-width': 'none',
-          top: offset.top + this.outerHeight(target)
+          top: position.top + this.outerHeight(target)
         });
       } else {
+        if (!Foundation.rtl && $(window).width() > this.outerWidth(dropdown) + target.offset().left) {
+          var left = position.left;
+        } else {
+          if (!dropdown.hasClass('right')) {
+            dropdown.addClass('right');
+          }
+          var left = position.left - (this.outerWidth(dropdown) - this.outerWidth(target));
+        }
+
         dropdown.attr('style', '').css({
           position : 'absolute',
-          top: offset.top + this.outerHeight(target),
-          left: offset.left
+          top: position.top + this.outerHeight(target),
+          left: left
         });
       }
 
