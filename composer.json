@@ -1,0 +1,15 @@
+{
+    "name": "tim/magento-zurb-foundation",
+    "description": "Magento Zurb Foundation template engine",
+    "type": "magento-module",
+    "authors": [
+        {
+            "name": "Tim Vroom",
+            "email": "tim@timvroom.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "magento-hackathon/magento-composer-installer":"*"
+    }
+}
